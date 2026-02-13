@@ -3,8 +3,8 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 
 #Produce DataFrame from csv file
-bmw_data = pd.read_csv('/Users/aryan/Documents/Coding/VS_CODE/env/csv_files/bmw.csv')
-#print(bmw_data[(bmw_data['year'] == 2016) & (bmw_data['mileage'] < 40000)])
+bmw_data = pd.read_csv('FILEPATH')
+
 
 #Converting data from words to 0/1
 def binary(df: pd.DataFrame) -> pd.DataFrame:
