@@ -6,17 +6,17 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 #Produce DataFrame from csv file
 bmw_data = pd.read_csv('data/dataset.csv')
 
-#Converting data from words to 0/1
+#One hot encoding
 def binarise(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
-    df['transmission'] = (df['transmission'] == 'Automatic').astype(int)
-    df['fuelType'] = (df['fuelType'] == 'Diesel').astype(int)
+    df = pd.get_dummies(df, columns=['transmission', 'fuelType'], drop_first=True)
     return df
 
 #Final dataframe to fit and transform
 final_bmw_data = binarise(bmw_data)
+final_bmw_data['age'] = 2026 - final_bmw_data['year']
 model_column = final_bmw_data['model']
-final_bmw_data.drop(['model'], inplace=True, axis = 1)
+final_bmw_data.drop(['model', 'year'], inplace=True, axis = 1)
 
 #Creating training and validating variables
 X = final_bmw_data.drop(['price'], axis=1)

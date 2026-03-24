@@ -59,6 +59,7 @@ The `binarise()` function converts:
 This uses vectorised pandas operations for efficiency.
 
 ### 3. Prepare features and target
+The age column is a new feature added to factor in how old the car is.
 The `model` column is stored separately and dropped from training features. The `price` column is used as the target variable.
 
 ### 4. Train the model
@@ -92,6 +93,5 @@ python bmw_price_pred.py
 
 ## Possible Improvements
 
-- Use one-hot encoding to capture all transmission and fuel type categories
 - Tune hyperparameters using GridSearchCV or RandomizedSearchCV
 - Add data visualisations for predicted vs actual prices
