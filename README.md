@@ -52,7 +52,7 @@ The model expects a CSV file named `dataset.csv` in the same directory. The data
 The dataset is read from `dataset.csv` into a pandas DataFrame.
 
 ### 2. Encode categorical columns
-The `encode()` function converts:
+The `binarise()` function converts:
 - `transmission` → `1` for Automatic, `0` for all others
 - `fuelType` → `1` for Diesel, `0` for all others
 
@@ -62,7 +62,7 @@ This uses vectorised pandas operations for efficiency.
 The `model` column is stored separately and dropped from training features. The `price` column is used as the target variable.
 
 ### 4. Train the model
-An 80/20 train-test split is applied. A `RandomForestRegressor` is trained on the training set using 1000 estimators and all available CPU cores.
+An 70/30 train-test split is applied. A `RandomForestRegressor` is trained on the training set using 1000 estimators and all available CPU cores.
 
 ### 5. Evaluate performance
 The model is evaluated on the test set using:
@@ -78,7 +78,7 @@ A CSV file named `prediction-original-prices.csv` is generated containing:
 ## Running the Project
 
 ```bash
-python main.py
+python bmw_price_pred.py
 ```
 
 ## Output CSV Example
