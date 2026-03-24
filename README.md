@@ -81,4 +81,17 @@ A CSV file named `prediction-original-prices.csv` is generated containing:
 python main.py
 ```
 
-## Example Terminal Output
+## Output CSV Example
+
+| model | originalPrice | predictedPrice |
+
+| 5 Series | 19995 | 20110.42 |
+| 3 Series | 14500 | 14287.31 |
+| X5 | 23999 | 24105.76 |
+
+
+## Possible Improvements
+
+- Use one-hot encoding to capture all transmission and fuel type categories
+- Tune hyperparameters using GridSearchCV or RandomizedSearchCV
+- Add data visualisations for predicted vs actual prices
